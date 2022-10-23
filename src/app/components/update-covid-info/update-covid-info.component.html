@@ -1,0 +1,15 @@
+<form #formData="ngForm">
+
+  <h1 *ngIf="customerId"> Update Covid-19 Sickness Information for Customer #{{customerId}}</h1>
+
+  Enter Covid's Start Date
+    <input #startData="ngModel" required minlength="1" maxlength="50" type="date" name="Date" [(ngModel)] ="covidInfo.covid_start" placeholder="Date" >
+    <span *ngIf="startData.errors?.required && startData.touched">Missing Start Date</span>
+    <br><br>
+
+    Enter Covid's End Date
+    <input #endData="ngModel" required minlength="1" maxlength="50" type="date" name="Date" [(ngModel)] ="covidInfo.covid_end" placeholder="Date" >
+    <span *ngIf="endData.errors?.required && endData.touched">Missing End Date</span>
+    <br><br>
+  
+    <button [disabled]="formData.form.invalid" (click)="updateCovidInfo()"> Update Information </button>

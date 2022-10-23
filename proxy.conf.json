@@ -1,0 +1,7 @@
+{
+    "/KlalitSystem": {
+    "target": "http://localhost:8800",
+    "secure": false,
+    "changeOrigin": true
+    }
+    }

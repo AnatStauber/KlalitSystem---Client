@@ -1,0 +1,50 @@
+<h1 *ngIf="covidInfo">
+  Customer #{{covidInfo.customer_id}}'s Covid-19 Profile
+</h1>
+<br>
+<h2> Covid Sickness Information</h2>
+<div *ngIf="covidInfo?.covid_start == null">
+<h2 > This Customer Never Got Covid-19 </h2>
+<button (click)="goToUpdateCovid()"> Update Sickness Information </button>
+</div>
+<div>
+  <table *ngIf="covidInfo?.covid_start != null">
+    <tr>
+      <th>Customer Id</th>
+      <th>Covid-19 Start Date</th>
+      <th>Covid-19 End Date</th>
+      </tr>
+      <tr>
+      <td>{{covidInfo.customer_id}}</td>
+      <td>{{covidInfo.covid_start}}</td>
+      <td>{{covidInfo.covid_end}}</td>
+      </tr>
+      </table>
+      <br><br>
+
+
+    <h2> Vaccines Information</h2>
+    <h2 *ngIf="vaccines?.length == 0"> This Customer Was Never Vaccinated </h2>
+    <table>
+      <tr *ngIf="vaccines?.length>0">
+        <th *ngFor="let v of vaccines">Vaccine #{{v.vaccine_id}} Date</th>
+      </tr>
+      <tr>
+        <td *ngFor="let v of vaccines">{{v.vaccine_date}} </td>
+      </tr>
+      <tr>
+        <th *ngFor="let v of vaccines">Vaccine #{{v.vaccine_id}} Manufacturer</th>
+      </tr>
+      <tr>
+      <td *ngFor="let v of vaccines">{{v.vacc_manu}} </td>
+    </tr>
+    </table>
+    
+</div>
+<br><br>
+<button *ngIf="vaccines?.length < 4" (click)="goToVaccinate()"> Vaccinate This Customer </button>
+
+<br><br><br>
+
+
+<button (click)="goToCustomersList()"> Go Back To Customer's List </button>

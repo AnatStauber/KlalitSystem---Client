@@ -1,0 +1,39 @@
+<h1>Update Customer #{{customer.id}}</h1>
+
+<form #formData="ngForm">
+
+
+  Update Customer's First Name?
+    <input #firstNameData="ngModel" minlength="1" maxlength="50" type="text" name="FirstName" [(ngModel)] ="customer.firstName" placeholder="First Name" >
+    <br><br>
+
+    Update Customer's Last Name?
+    <input #lastNameData="ngModel"  minlength="1" maxlength="50" type="text" name="LastName" [(ngModel)] ="customer.lastName" placeholder="Last Name" >
+    <br><br>
+
+    Update Customer's Date Of Birth? 
+    <input #dateOfBirthData="ngModel"  minlength="1" maxlength="50" type="date" name="DateOfBirth" [(ngModel)] ="customer.dateOfBirth" placeholder="Date Of Birth" >
+    <br><br>
+
+    Update Customer's Phone Number?
+    <input #phoneData="ngModel" minlength="1" maxlength="50" type="text" name="Phone" [(ngModel)] ="customer.phone" placeholder="Phone Number" >
+    <br><br>
+
+    Update Customer's Mobile Phone Number?  
+    <input #mobilePhoneData="ngModel"  minlength="1" maxlength="50" type="text" name="MobilePhone" [(ngModel)] ="customer.mobilePhone" placeholder="Mobile Phone Number" >
+    <br><br>
+
+    Update Customer's Street Name?
+    <input #streetData="ngModel"  minlength="1" maxlength="150" type="text" name="Street" [(ngModel)] ="customer.street" placeholder="Street" >
+    <br><br>
+
+    Update Customer's House Number?
+    <input #houseNumeData="ngModel"  minlength="1" maxlength="10" type="number" name="HouseNum" [(ngModel)] ="customer.houseNum" placeholder="House Number" >
+    <br><br>
+    
+    Update Customer's City? 
+    <input #cityData="ngModel"  minlength="1" maxlength="150" type="text" name="City" [(ngModel)] ="customer.city" placeholder="City" >
+   <br><br>
+
+    <button (click)="updateCustomer()"> Update Customer </button>
+    </form>

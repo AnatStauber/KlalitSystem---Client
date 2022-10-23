@@ -1,0 +1,49 @@
+<h1>Add Customer:</h1>
+
+<form #formData="ngForm">
+
+  Insert Customer's Id:  
+    <input #IdData="ngModel" required minlength="1" maxlength="15" type="number" name="customerId" [(ngModel)] ="customer.id" placeholder="Customer Id" >
+    <span *ngIf="IdData.errors?.required && IdData.touched">Missing Id</span>
+<br><br>
+
+  Insert Customer's First Name:  
+    <input #firstNameData="ngModel" required minlength="1" maxlength="50" type="text" name="FirstName" [(ngModel)] ="customer.firstName" placeholder="First Name" >
+    <span *ngIf="firstNameData.errors?.required && firstNameData.touched">Missing First Name</span>
+    <br><br>
+
+    Insert Customer's Last Name:  
+    <input #lastNameData="ngModel" required minlength="1" maxlength="50" type="text" name="LastName" [(ngModel)] ="customer.lastName" placeholder="Last Name" >
+    <span *ngIf="lastNameData.errors?.required && lastNameData.touched">Missing Last Name</span>
+    <br><br>
+
+    Insert Customer's Date Of Birth:  
+    <input #dateOfBirthData="ngModel" required minlength="1" maxlength="50" type="date" name="DateOfBirth" [(ngModel)] ="customer.dateOfBirth" placeholder="Date Of Birth" >
+    <span *ngIf="dateOfBirthData.errors?.required && dateOfBirthData.touched">Missing Date Of Birth</span>
+    <br><br>
+
+    Insert Customer's Phone Number:  
+    <input #phoneData="ngModel" minlength="1" maxlength="50" type="text" name="Phone" [(ngModel)] ="customer.phone" placeholder="Phone Number" >
+    <br><br>
+
+    Insert Customer's Mobile Phone Number:  
+    <input #mobilePhoneData="ngModel" required minlength="1" maxlength="50" type="text" name="MobilePhone" [(ngModel)] ="customer.mobilePhone" placeholder="Mobile Phone Number" >
+    <span *ngIf="mobilePhoneData.errors?.required && mobilePhoneData.touched">Missing Mobile Phone Number</span>
+    <br><br>
+
+    Insert Customer's Street Name:  
+    <input #streetData="ngModel" required minlength="1" maxlength="150" type="text" name="Street" [(ngModel)] ="customer.street" placeholder="Street" >
+    <span *ngIf="streetData.errors?.required && streetData.touched">Missing Street Name</span>
+    <br><br>
+
+    Insert Customer's House Number:  
+    <input #houseNumeData="ngModel" required minlength="1" maxlength="10" type="number" name="HouseNum" [(ngModel)] ="customer.houseNum" placeholder="House Number" >
+    <span *ngIf="houseNumeData.errors?.required && houseNumeData.touched">Missing House Number</span>
+    <br><br>
+    
+    Insert Customer's City:  
+    <input #cityData="ngModel" required minlength="1" maxlength="150" type="text" name="City" [(ngModel)] ="customer.city" placeholder="City" >
+    <span *ngIf="cityData.errors?.required && cityData.touched">Missing City</span>
+    <br><br>
+
+    <button [disabled]="formData.form.invalid" (click)="addCustomer()"> Add New Customer </button>

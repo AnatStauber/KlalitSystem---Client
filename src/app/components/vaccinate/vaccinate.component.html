@@ -1,0 +1,18 @@
+<h1 *ngIf="customerId">Vaccinate Customer #{{customerId}} </h1>
+
+<form #formData="ngForm">
+
+
+  Enter Vaccine's Date
+    <input #DateData="ngModel" required minlength="1" maxlength="50" type="date" name="Date" [(ngModel)] ="vaccine.vaccine_date" placeholder="Date" >
+    <span *ngIf="DateData.errors?.required && DateData.touched">Missing Date</span>
+    <br><br>
+
+    Enter Vaccine's Manufacturer
+    <select #manuData="ngModel" name="type"  [(ngModel)] = "vaccine.vacc_manu" placeholder="Vaccine Manufacturer" >
+      <option *ngFor="let m of manufacturers" value="{{m}}"> {{m}} </option>
+    </select>
+    <br><br>
+  
+    <button [disabled]="formData.form.invalid" (click)="vaccinate()"> Vaccinate Customer </button>
+    </form>

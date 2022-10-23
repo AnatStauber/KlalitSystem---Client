@@ -1,0 +1,32 @@
+
+<br>
+ <h1>  Welcome! </h1> 
+
+<b> View All Customers</b>
+<br>
+<button (click)="goToCustomersList()" > Go </button>
+
+<br>
+<form #myForm="ngForm" (ngSubmit) = "goToACustomer()">
+  <br>
+<b> View a single Customer: </b>
+<br>
+<b> enter an id: </b>
+    <input #usernameData="ngModel"  type="number" placeholder="id" 
+        name="id" [(ngModel)]="customer.id">
+        <br>
+        <button [disabled]="myForm.form.invalid"> GO </button>
+
+      </form>
+
+     
+
+<br><br>
+<b> Add a Customer</b>
+<br>
+<button (click)="addCustomer()" > Go </button>
+<br>
+<br><br>
+<b> View General Covid Info</b>
+<br>
+<button (click)="goToGeneralInfo()" > Go </button>

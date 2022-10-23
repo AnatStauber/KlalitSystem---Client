@@ -1,0 +1,44 @@
+<h1 *ngIf="customer">
+  Customer #{{customer.id}}'s Profile
+</h1>
+
+<div *ngIf="customer">
+  <table class="table">
+    <tr>
+      <th>Customer Id</th>
+      <th>Name</th>
+      <th>Date Of Birth</th>
+      <th>Phone Number</th>
+      <th>Mobile phone Number</th>
+      <th>Address</th>
+      <th> City </th>
+    </tr>
+    <tr>
+      <td>{{customer.id}}</td>
+      <td>{{customer.firstName}} {{customer.lastName}} </td>
+      <td>{{customer.dateOfBirth}}</td>
+      <td>{{customer.phone}}</td>
+      <td>{{customer.mobilePhone}} </td>
+      <td> {{customer.houseNum}} {{customer.street}} St. </td>
+      <td>{{customer.city}} </td>
+    </tr>
+    </table>
+    
+</div>
+
+<div *ngIf="!customer">
+  <br><br><br>
+  <h1>Sorry, we have no customer with that ID. 
+    <br>
+    please go back and try again.</h1>
+</div>
+
+<br><br>
+<button *ngIf="customer" (click)="goToCovidProfile(customer.id)"> View Cutomer's Full Covid-19 Information </button>
+<br><br>
+<button *ngIf="customer" (click)="goToUpdate(customer.id)"> Update This Customer </button>
+<br><br>
+<button *ngIf="customer" (click)="clickMethod()"> Delete This Customer </button>
+
+<br><br><br>
+<button (click)="goToCustomersList()"> Go Back To Customers' List </button>
